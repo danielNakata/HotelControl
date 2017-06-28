@@ -41,7 +41,92 @@ CREATE TABLE `dnn_catacciones_cnf` (
 
 LOCK TABLES `dnn_catacciones_cnf` WRITE;
 /*!40000 ALTER TABLE `dnn_catacciones_cnf` DISABLE KEYS */;
+INSERT INTO `dnn_catacciones_cnf` VALUES (1,'INICIO DE SESION','ACCION AL INICIAR LA SESION',1,NULL,NULL,1,NULL);
 /*!40000 ALTER TABLE `dnn_catacciones_cnf` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_catestatusconsumo`
+--
+
+DROP TABLE IF EXISTS `dnn_catestatusconsumo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_catestatusconsumo` (
+  `idestatus` int(11) NOT NULL,
+  `estatusconsumo` varchar(50) NOT NULL DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idestatus`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_catestatusconsumo`
+--
+
+LOCK TABLES `dnn_catestatusconsumo` WRITE;
+/*!40000 ALTER TABLE `dnn_catestatusconsumo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_catestatusconsumo` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_catestatushabitacion`
+--
+
+DROP TABLE IF EXISTS `dnn_catestatushabitacion`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_catestatushabitacion` (
+  `idestatus` int(11) NOT NULL,
+  `estatushabitacion` varchar(50) NOT NULL DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idestatus`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_catestatushabitacion`
+--
+
+LOCK TABLES `dnn_catestatushabitacion` WRITE;
+/*!40000 ALTER TABLE `dnn_catestatushabitacion` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_catestatushabitacion` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_catformaspago`
+--
+
+DROP TABLE IF EXISTS `dnn_catformaspago`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_catformaspago` (
+  `idformapago` int(11) NOT NULL,
+  `formapago` varchar(50) NOT NULL DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT NULL,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idformapago`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_catformaspago`
+--
+
+LOCK TABLES `dnn_catformaspago` WRITE;
+/*!40000 ALTER TABLE `dnn_catformaspago` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_catformaspago` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -103,6 +188,35 @@ CREATE TABLE `dnn_catmenu_cnf` (
 LOCK TABLES `dnn_catmenu_cnf` WRITE;
 /*!40000 ALTER TABLE `dnn_catmenu_cnf` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dnn_catmenu_cnf` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_catmovimientosproducto`
+--
+
+DROP TABLE IF EXISTS `dnn_catmovimientosproducto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_catmovimientosproducto` (
+  `idtipomovto` int(11) NOT NULL,
+  `tipomovto` varchar(50) NOT NULL DEFAULT '-',
+  `factor` double DEFAULT NULL,
+  `esactivo` int(11) DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idtipomovto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_catmovimientosproducto`
+--
+
+LOCK TABLES `dnn_catmovimientosproducto` WRITE;
+/*!40000 ALTER TABLE `dnn_catmovimientosproducto` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_catmovimientosproducto` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -173,6 +287,62 @@ LOCK TABLES `dnn_catstores_cnf` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `dnn_cattipohabitaciones`
+--
+
+DROP TABLE IF EXISTS `dnn_cattipohabitaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_cattipohabitaciones` (
+  `idtipohabitacion` int(11) NOT NULL,
+  `tipohabitacion` varchar(100) NOT NULL DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idtipohabitacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_cattipohabitaciones`
+--
+
+LOCK TABLES `dnn_cattipohabitaciones` WRITE;
+/*!40000 ALTER TABLE `dnn_cattipohabitaciones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_cattipohabitaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_cattipopagosempleados`
+--
+
+DROP TABLE IF EXISTS `dnn_cattipopagosempleados`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_cattipopagosempleados` (
+  `idtipopago` int(11) NOT NULL,
+  `tipopago` varchar(50) NOT NULL DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT NULL,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idtipopago`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_cattipopagosempleados`
+--
+
+LOCK TABLES `dnn_cattipopagosempleados` WRITE;
+/*!40000 ALTER TABLE `dnn_cattipopagosempleados` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_cattipopagosempleados` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `dnn_cattipoproductos`
 --
 
@@ -198,6 +368,34 @@ CREATE TABLE `dnn_cattipoproductos` (
 LOCK TABLES `dnn_cattipoproductos` WRITE;
 /*!40000 ALTER TABLE `dnn_cattipoproductos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dnn_cattipoproductos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_catturnos`
+--
+
+DROP TABLE IF EXISTS `dnn_catturnos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_catturnos` (
+  `idturno` int(11) NOT NULL,
+  `turno` varchar(50) NOT NULL DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idturno`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_catturnos`
+--
+
+LOCK TABLES `dnn_catturnos` WRITE;
+/*!40000 ALTER TABLE `dnn_catturnos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_catturnos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -263,6 +461,163 @@ LOCK TABLES `dnn_catventanas_cnf` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `dnn_consumohabitacion_det`
+--
+
+DROP TABLE IF EXISTS `dnn_consumohabitacion_det`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_consumohabitacion_det` (
+  `idconsumo` bigint(20) NOT NULL,
+  `idhabitacion` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `ticket` varchar(50) NOT NULL,
+  `idproducto` int(11) NOT NULL,
+  `cantidad` double NOT NULL DEFAULT '0',
+  `costounitario` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `costo` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `iva` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `ieps` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `costototal` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idconsumo`,`idhabitacion`,`fecha`,`ticket`,`idproducto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_consumohabitacion_det`
+--
+
+LOCK TABLES `dnn_consumohabitacion_det` WRITE;
+/*!40000 ALTER TABLE `dnn_consumohabitacion_det` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_consumohabitacion_det` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_consumohabitacion_enc`
+--
+
+DROP TABLE IF EXISTS `dnn_consumohabitacion_enc`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_consumohabitacion_enc` (
+  `idconsumo` bigint(20) NOT NULL,
+  `idhabitacion` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `ticket` varchar(50) NOT NULL,
+  `totalproductos` int(11) NOT NULL DEFAULT '0',
+  `costo` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `iva` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `ieps` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `descuentos` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `costoneto` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `idformapago` int(11) NOT NULL DEFAULT '0',
+  `idestatus` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idconsumo`,`idhabitacion`,`fecha`,`ticket`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_consumohabitacion_enc`
+--
+
+LOCK TABLES `dnn_consumohabitacion_enc` WRITE;
+/*!40000 ALTER TABLE `dnn_consumohabitacion_enc` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_consumohabitacion_enc` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_empleados`
+--
+
+DROP TABLE IF EXISTS `dnn_empleados`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_empleados` (
+  `idempleado` int(11) NOT NULL,
+  `nombre` varchar(150) NOT NULL,
+  `apellidos` varchar(150) NOT NULL,
+  `rfc` varchar(100) NOT NULL,
+  `curp` varchar(100) NOT NULL,
+  `fechanac` date NOT NULL DEFAULT '2000-01-01',
+  `fechaalta` date DEFAULT NULL,
+  `fechabaja` date DEFAULT NULL,
+  `idsucursal` int(11) NOT NULL DEFAULT '0',
+  `sueldodiario` decimal(12,4) DEFAULT '0.0000',
+  `horaslabora` double DEFAULT '0',
+  `diaslabora` double DEFAULT '0',
+  `diasvacaciones` int(11) DEFAULT '0',
+  `idturno` int(11) DEFAULT '0',
+  `idtipopago` int(11) DEFAULT '0',
+  `direccion` text,
+  `tel1` varchar(20) DEFAULT '-',
+  `tel2` varchar(20) DEFAULT '-',
+  `email` varchar(255) DEFAULT '-',
+  `esactivo` int(11) NOT NULL DEFAULT '1',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idempleado`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_empleados`
+--
+
+LOCK TABLES `dnn_empleados` WRITE;
+/*!40000 ALTER TABLE `dnn_empleados` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_empleados` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dnn_habitaciones`
+--
+
+DROP TABLE IF EXISTS `dnn_habitaciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dnn_habitaciones` (
+  `idhabitacion` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL DEFAULT '-',
+  `descripcion` varchar(255) NOT NULL DEFAULT '-',
+  `idtipohabitacion` int(11) NOT NULL DEFAULT '0',
+  `capacidad` int(11) NOT NULL DEFAULT '0',
+  `extras` int(11) NOT NULL DEFAULT '0',
+  `idestatus` int(11) NOT NULL DEFAULT '1',
+  `comentarios` text,
+  `costohora` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `costonoche` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `costodia` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `iva` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `ieps` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `costopersonaextra` decimal(12,4) NOT NULL DEFAULT '0.0000',
+  `fechareg` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `fechamod` timestamp NULL DEFAULT NULL,
+  `idusrreg` int(11) DEFAULT NULL,
+  `idusrmod` int(11) DEFAULT NULL,
+  PRIMARY KEY (`idhabitacion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dnn_habitaciones`
+--
+
+LOCK TABLES `dnn_habitaciones` WRITE;
+/*!40000 ALTER TABLE `dnn_habitaciones` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dnn_habitaciones` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `dnn_kardexproductos`
 --
 
@@ -274,7 +629,7 @@ CREATE TABLE `dnn_kardexproductos` (
   `fecha` date NOT NULL,
   `hora` time DEFAULT '00:00:01',
   `idsucursal` int(11) NOT NULL,
-  `tipomovto` int(11) NOT NULL,
+  `idtipomovto` int(11) NOT NULL,
   `idprod` int(11) NOT NULL,
   `idunidad` int(11) DEFAULT NULL,
   `cantidad` double DEFAULT '0',
@@ -289,7 +644,7 @@ CREATE TABLE `dnn_kardexproductos` (
   `fechamod` timestamp NULL DEFAULT NULL,
   `idusrreg` int(11) DEFAULT NULL,
   `idusrmod` int(11) DEFAULT NULL,
-  PRIMARY KEY (`idmov`,`fecha`,`idsucursal`,`tipomovto`,`idprod`)
+  PRIMARY KEY (`idmov`,`fecha`,`idsucursal`,`idtipomovto`,`idprod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -483,6 +838,55 @@ UNLOCK TABLES;
 --
 -- Dumping routines for database 'ControlHotel'
 --
+/*!50003 DROP PROCEDURE IF EXISTS `DNN_SP_INICIOSESION` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_INICIOSESION`(
+	IN paUsuario varchar(50)
+    ,in paContrasena varchar(150)
+    ,in paLugar varchar(255)
+    ,out paRes int
+    ,out paMsg varchar(150)
+)
+BEGIN
+	declare vlexiste int;
+    declare vlidusuario int;
+    set vlexiste = 0;
+    set paRes = vlexiste;
+    set paMsg = 'EL USUARIO INDICADO NO EXISTE';
+	select count(*) into vlexiste from dnn_usuarios where usuario = paUsuario;
+    if vlexiste > 0 then
+		set vlexiste = 0;
+        set paMsg = 'LA CONTRASENA ES INCORRECTA';
+		select count(*) into vlexiste from dnn_usuarios where usuario = paUsuario AND contrasena = paContrasena;
+		if vlexiste > 0 then
+			set paMsg = 'EL USUARIO NO ESTA ACTIVO';
+			SET vlexiste = 0;
+		    select esactivo into vlexiste from dnn_usuarios where usuario = paUsuario;
+            if vlexiste = 1 then
+				select idusuario into vlidusuario from dnn_usuarios where usuario = paUsuario;
+				update dnn_usuarios set ultimoacc = current_timestamp where usuario = paUsuario;
+				set vlexiste = 1;
+				set paMsg = 'BIENVENIDO';
+				set paRes = vlexiste;
+				insert into dnn_logaccesos_cnf(idusuario, fechareg, lugar, fecha, hora) values (vlidusuario, current_timestamp, paLugar, now(), now());
+			end if;
+		end if;
+    end if;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -493,4 +897,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-06-26 19:28:44
+-- Dump completed on 2017-06-27 19:40:29
