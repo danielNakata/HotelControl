@@ -1,27 +1,24 @@
--- MySQL dump 10.13  Distrib 5.7.18, for Linux (x86_64)
---
--- Host: 127.0.0.1    Database: ControlHotel
--- ------------------------------------------------------
--- Server version	5.7.18-0ubuntu0.16.04.1
+/*
+SQLyog Enterprise - MySQL GUI v8.05 
+MySQL - 5.5.5-10.1.9-MariaDB : Database - controlhotel
+*********************************************************************
+*/
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `dnn_catacciones_cnf`
---
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`controlhotel` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `controlhotel`;
+
+/*Table structure for table `dnn_catacciones_cnf` */
 
 DROP TABLE IF EXISTS `dnn_catacciones_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catacciones_cnf` (
   `idaccion` int(11) NOT NULL,
   `accion` varchar(45) NOT NULL DEFAULT '-',
@@ -33,25 +30,15 @@ CREATE TABLE `dnn_catacciones_cnf` (
   `idurmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idaccion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catacciones_cnf`
---
+/*Data for the table `dnn_catacciones_cnf` */
 
-LOCK TABLES `dnn_catacciones_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_catacciones_cnf` DISABLE KEYS */;
-INSERT INTO `dnn_catacciones_cnf` VALUES (1,'INICIO DE SESION','ACCION AL INICIAR LA SESION',1,NULL,NULL,1,NULL);
-/*!40000 ALTER TABLE `dnn_catacciones_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
+insert  into `dnn_catacciones_cnf`(`idaccion`,`accion`,`descripcion`,`esactivo`,`fechareg`,`fechamod`,`idusrreg`,`idurmod`) values (1,'INICIO DE SESION','ACCION AL INICIAR LA SESION',1,NULL,NULL,1,NULL);
 
---
--- Table structure for table `dnn_catestatusconsumo`
---
+/*Table structure for table `dnn_catestatusconsumo` */
 
 DROP TABLE IF EXISTS `dnn_catestatusconsumo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catestatusconsumo` (
   `idestatus` int(11) NOT NULL,
   `estatusconsumo` varchar(50) NOT NULL DEFAULT '-',
@@ -62,24 +49,13 @@ CREATE TABLE `dnn_catestatusconsumo` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idestatus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catestatusconsumo`
---
+/*Data for the table `dnn_catestatusconsumo` */
 
-LOCK TABLES `dnn_catestatusconsumo` WRITE;
-/*!40000 ALTER TABLE `dnn_catestatusconsumo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catestatusconsumo` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catestatushabitacion`
---
+/*Table structure for table `dnn_catestatushabitacion` */
 
 DROP TABLE IF EXISTS `dnn_catestatushabitacion`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catestatushabitacion` (
   `idestatus` int(11) NOT NULL,
   `estatushabitacion` varchar(50) NOT NULL DEFAULT '-',
@@ -90,24 +66,13 @@ CREATE TABLE `dnn_catestatushabitacion` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idestatus`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catestatushabitacion`
---
+/*Data for the table `dnn_catestatushabitacion` */
 
-LOCK TABLES `dnn_catestatushabitacion` WRITE;
-/*!40000 ALTER TABLE `dnn_catestatushabitacion` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catestatushabitacion` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catformaspago`
---
+/*Table structure for table `dnn_catformaspago` */
 
 DROP TABLE IF EXISTS `dnn_catformaspago`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catformaspago` (
   `idformapago` int(11) NOT NULL,
   `formapago` varchar(50) NOT NULL DEFAULT '-',
@@ -118,24 +83,13 @@ CREATE TABLE `dnn_catformaspago` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idformapago`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catformaspago`
---
+/*Data for the table `dnn_catformaspago` */
 
-LOCK TABLES `dnn_catformaspago` WRITE;
-/*!40000 ALTER TABLE `dnn_catformaspago` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catformaspago` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catgruposproductos`
---
+/*Table structure for table `dnn_catgruposproductos` */
 
 DROP TABLE IF EXISTS `dnn_catgruposproductos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catgruposproductos` (
   `idgrupo` int(11) NOT NULL,
   `grupo` varchar(50) NOT NULL DEFAULT '-',
@@ -147,24 +101,13 @@ CREATE TABLE `dnn_catgruposproductos` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idgrupo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catgruposproductos`
---
+/*Data for the table `dnn_catgruposproductos` */
 
-LOCK TABLES `dnn_catgruposproductos` WRITE;
-/*!40000 ALTER TABLE `dnn_catgruposproductos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catgruposproductos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catmenu_cnf`
---
+/*Table structure for table `dnn_catmenu_cnf` */
 
 DROP TABLE IF EXISTS `dnn_catmenu_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catmenu_cnf` (
   `idmenu` int(11) NOT NULL,
   `menu` varchar(150) NOT NULL DEFAULT '-',
@@ -179,24 +122,13 @@ CREATE TABLE `dnn_catmenu_cnf` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idmenu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catmenu_cnf`
---
+/*Data for the table `dnn_catmenu_cnf` */
 
-LOCK TABLES `dnn_catmenu_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_catmenu_cnf` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catmenu_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catmovimientosproducto`
---
+/*Table structure for table `dnn_catmovimientosproducto` */
 
 DROP TABLE IF EXISTS `dnn_catmovimientosproducto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catmovimientosproducto` (
   `idtipomovto` int(11) NOT NULL,
   `tipomovto` varchar(50) NOT NULL DEFAULT '-',
@@ -208,24 +140,13 @@ CREATE TABLE `dnn_catmovimientosproducto` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idtipomovto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catmovimientosproducto`
---
+/*Data for the table `dnn_catmovimientosproducto` */
 
-LOCK TABLES `dnn_catmovimientosproducto` WRITE;
-/*!40000 ALTER TABLE `dnn_catmovimientosproducto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catmovimientosproducto` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catopcionesmenu_cnf`
---
+/*Table structure for table `dnn_catopcionesmenu_cnf` */
 
 DROP TABLE IF EXISTS `dnn_catopcionesmenu_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catopcionesmenu_cnf` (
   `idopcion` int(11) NOT NULL,
   `idmenu` int(11) NOT NULL,
@@ -246,24 +167,13 @@ CREATE TABLE `dnn_catopcionesmenu_cnf` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idopcion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catopcionesmenu_cnf`
---
+/*Data for the table `dnn_catopcionesmenu_cnf` */
 
-LOCK TABLES `dnn_catopcionesmenu_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_catopcionesmenu_cnf` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catopcionesmenu_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catstores_cnf`
---
+/*Table structure for table `dnn_catstores_cnf` */
 
 DROP TABLE IF EXISTS `dnn_catstores_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catstores_cnf` (
   `idstorejec` int(11) NOT NULL,
   `storejec` varchar(255) NOT NULL DEFAULT '-',
@@ -275,24 +185,13 @@ CREATE TABLE `dnn_catstores_cnf` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idstorejec`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catstores_cnf`
---
+/*Data for the table `dnn_catstores_cnf` */
 
-LOCK TABLES `dnn_catstores_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_catstores_cnf` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catstores_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_cattipohabitaciones`
---
+/*Table structure for table `dnn_cattipohabitaciones` */
 
 DROP TABLE IF EXISTS `dnn_cattipohabitaciones`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_cattipohabitaciones` (
   `idtipohabitacion` int(11) NOT NULL,
   `tipohabitacion` varchar(100) NOT NULL DEFAULT '-',
@@ -303,24 +202,13 @@ CREATE TABLE `dnn_cattipohabitaciones` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idtipohabitacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_cattipohabitaciones`
---
+/*Data for the table `dnn_cattipohabitaciones` */
 
-LOCK TABLES `dnn_cattipohabitaciones` WRITE;
-/*!40000 ALTER TABLE `dnn_cattipohabitaciones` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_cattipohabitaciones` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_cattipopagosempleados`
---
+/*Table structure for table `dnn_cattipopagosempleados` */
 
 DROP TABLE IF EXISTS `dnn_cattipopagosempleados`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_cattipopagosempleados` (
   `idtipopago` int(11) NOT NULL,
   `tipopago` varchar(50) NOT NULL DEFAULT '-',
@@ -331,24 +219,13 @@ CREATE TABLE `dnn_cattipopagosempleados` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idtipopago`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_cattipopagosempleados`
---
+/*Data for the table `dnn_cattipopagosempleados` */
 
-LOCK TABLES `dnn_cattipopagosempleados` WRITE;
-/*!40000 ALTER TABLE `dnn_cattipopagosempleados` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_cattipopagosempleados` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_cattipoproductos`
---
+/*Table structure for table `dnn_cattipoproductos` */
 
 DROP TABLE IF EXISTS `dnn_cattipoproductos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_cattipoproductos` (
   `idtipo` int(11) NOT NULL,
   `tipo` varchar(50) NOT NULL DEFAULT '-',
@@ -359,24 +236,13 @@ CREATE TABLE `dnn_cattipoproductos` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idtipo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_cattipoproductos`
---
+/*Data for the table `dnn_cattipoproductos` */
 
-LOCK TABLES `dnn_cattipoproductos` WRITE;
-/*!40000 ALTER TABLE `dnn_cattipoproductos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_cattipoproductos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catturnos`
---
+/*Table structure for table `dnn_catturnos` */
 
 DROP TABLE IF EXISTS `dnn_catturnos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catturnos` (
   `idturno` int(11) NOT NULL,
   `turno` varchar(50) NOT NULL DEFAULT '-',
@@ -387,24 +253,13 @@ CREATE TABLE `dnn_catturnos` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idturno`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catturnos`
---
+/*Data for the table `dnn_catturnos` */
 
-LOCK TABLES `dnn_catturnos` WRITE;
-/*!40000 ALTER TABLE `dnn_catturnos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catturnos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catunidades`
---
+/*Table structure for table `dnn_catunidades` */
 
 DROP TABLE IF EXISTS `dnn_catunidades`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catunidades` (
   `idunidad` int(11) NOT NULL,
   `unidad` varchar(50) NOT NULL DEFAULT '-',
@@ -416,24 +271,13 @@ CREATE TABLE `dnn_catunidades` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idunidad`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catunidades`
---
+/*Data for the table `dnn_catunidades` */
 
-LOCK TABLES `dnn_catunidades` WRITE;
-/*!40000 ALTER TABLE `dnn_catunidades` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catunidades` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_catventanas_cnf`
---
+/*Table structure for table `dnn_catventanas_cnf` */
 
 DROP TABLE IF EXISTS `dnn_catventanas_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_catventanas_cnf` (
   `idventana` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL DEFAULT '-',
@@ -449,24 +293,13 @@ CREATE TABLE `dnn_catventanas_cnf` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idventana`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_catventanas_cnf`
---
+/*Data for the table `dnn_catventanas_cnf` */
 
-LOCK TABLES `dnn_catventanas_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_catventanas_cnf` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_catventanas_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_consumohabitacion_det`
---
+/*Table structure for table `dnn_consumohabitacion_det` */
 
 DROP TABLE IF EXISTS `dnn_consumohabitacion_det`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_consumohabitacion_det` (
   `idconsumo` bigint(20) NOT NULL,
   `idhabitacion` int(11) NOT NULL,
@@ -485,24 +318,13 @@ CREATE TABLE `dnn_consumohabitacion_det` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idconsumo`,`idhabitacion`,`fecha`,`ticket`,`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_consumohabitacion_det`
---
+/*Data for the table `dnn_consumohabitacion_det` */
 
-LOCK TABLES `dnn_consumohabitacion_det` WRITE;
-/*!40000 ALTER TABLE `dnn_consumohabitacion_det` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_consumohabitacion_det` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_consumohabitacion_enc`
---
+/*Table structure for table `dnn_consumohabitacion_enc` */
 
 DROP TABLE IF EXISTS `dnn_consumohabitacion_enc`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_consumohabitacion_enc` (
   `idconsumo` bigint(20) NOT NULL,
   `idhabitacion` int(11) NOT NULL,
@@ -522,24 +344,13 @@ CREATE TABLE `dnn_consumohabitacion_enc` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idconsumo`,`idhabitacion`,`fecha`,`ticket`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_consumohabitacion_enc`
---
+/*Data for the table `dnn_consumohabitacion_enc` */
 
-LOCK TABLES `dnn_consumohabitacion_enc` WRITE;
-/*!40000 ALTER TABLE `dnn_consumohabitacion_enc` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_consumohabitacion_enc` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_empleados`
---
+/*Table structure for table `dnn_empleados` */
 
 DROP TABLE IF EXISTS `dnn_empleados`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_empleados` (
   `idempleado` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL,
@@ -567,24 +378,13 @@ CREATE TABLE `dnn_empleados` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idempleado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_empleados`
---
+/*Data for the table `dnn_empleados` */
 
-LOCK TABLES `dnn_empleados` WRITE;
-/*!40000 ALTER TABLE `dnn_empleados` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_empleados` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_habitaciones`
---
+/*Table structure for table `dnn_habitaciones` */
 
 DROP TABLE IF EXISTS `dnn_habitaciones`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_habitaciones` (
   `idhabitacion` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL DEFAULT '-',
@@ -606,24 +406,13 @@ CREATE TABLE `dnn_habitaciones` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idhabitacion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_habitaciones`
---
+/*Data for the table `dnn_habitaciones` */
 
-LOCK TABLES `dnn_habitaciones` WRITE;
-/*!40000 ALTER TABLE `dnn_habitaciones` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_habitaciones` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_kardexproductos`
---
+/*Table structure for table `dnn_kardexproductos` */
 
 DROP TABLE IF EXISTS `dnn_kardexproductos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_kardexproductos` (
   `idmov` bigint(20) NOT NULL,
   `fecha` date NOT NULL,
@@ -646,24 +435,13 @@ CREATE TABLE `dnn_kardexproductos` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idmov`,`fecha`,`idsucursal`,`idtipomovto`,`idprod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_kardexproductos`
---
+/*Data for the table `dnn_kardexproductos` */
 
-LOCK TABLES `dnn_kardexproductos` WRITE;
-/*!40000 ALTER TABLE `dnn_kardexproductos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_kardexproductos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_logaccesos_cnf`
---
+/*Table structure for table `dnn_logaccesos_cnf` */
 
 DROP TABLE IF EXISTS `dnn_logaccesos_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_logaccesos_cnf` (
   `idlog` bigint(20) NOT NULL AUTO_INCREMENT,
   `idusuario` int(11) NOT NULL,
@@ -673,24 +451,13 @@ CREATE TABLE `dnn_logaccesos_cnf` (
   `hora` time DEFAULT NULL,
   PRIMARY KEY (`idlog`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_logaccesos_cnf`
---
+/*Data for the table `dnn_logaccesos_cnf` */
 
-LOCK TABLES `dnn_logaccesos_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_logaccesos_cnf` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_logaccesos_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_logcambios_cnf`
---
+/*Table structure for table `dnn_logcambios_cnf` */
 
 DROP TABLE IF EXISTS `dnn_logcambios_cnf`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_logcambios_cnf` (
   `idcambio` bigint(20) NOT NULL AUTO_INCREMENT,
   `idaccion` int(11) NOT NULL,
@@ -708,24 +475,13 @@ CREATE TABLE `dnn_logcambios_cnf` (
   `paramout` text,
   PRIMARY KEY (`idcambio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_logcambios_cnf`
---
+/*Data for the table `dnn_logcambios_cnf` */
 
-LOCK TABLES `dnn_logcambios_cnf` WRITE;
-/*!40000 ALTER TABLE `dnn_logcambios_cnf` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_logcambios_cnf` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_productos`
---
+/*Table structure for table `dnn_productos` */
 
 DROP TABLE IF EXISTS `dnn_productos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_productos` (
   `idproducto` int(11) NOT NULL,
   `nombre` varchar(150) NOT NULL DEFAULT '-',
@@ -746,24 +502,13 @@ CREATE TABLE `dnn_productos` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idproducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_productos`
---
+/*Data for the table `dnn_productos` */
 
-LOCK TABLES `dnn_productos` WRITE;
-/*!40000 ALTER TABLE `dnn_productos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_productos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_proveedores`
---
+/*Table structure for table `dnn_proveedores` */
 
 DROP TABLE IF EXISTS `dnn_proveedores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_proveedores` (
   `idproveedor` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL DEFAULT '-',
@@ -783,24 +528,13 @@ CREATE TABLE `dnn_proveedores` (
   `idusrmod` int(11) DEFAULT NULL,
   PRIMARY KEY (`idproveedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_proveedores`
---
+/*Data for the table `dnn_proveedores` */
 
-LOCK TABLES `dnn_proveedores` WRITE;
-/*!40000 ALTER TABLE `dnn_proveedores` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_proveedores` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dnn_usuarios`
---
+/*Table structure for table `dnn_usuarios` */
 
 DROP TABLE IF EXISTS `dnn_usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `dnn_usuarios` (
   `idusuario` int(11) NOT NULL,
   `usuario` varchar(50) NOT NULL,
@@ -816,39 +550,53 @@ CREATE TABLE `dnn_usuarios` (
   `fechamod` timestamp NULL DEFAULT NULL,
   `idusrreg` int(11) DEFAULT NULL,
   `idusermod` int(11) DEFAULT NULL,
+  `numintentos` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`idusuario`),
   UNIQUE KEY `usuario_UNIQUE` (`usuario`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dnn_usuarios`
---
+/*Data for the table `dnn_usuarios` */
 
-LOCK TABLES `dnn_usuarios` WRITE;
-/*!40000 ALTER TABLE `dnn_usuarios` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dnn_usuarios` ENABLE KEYS */;
-UNLOCK TABLES;
+/* Procedure structure for procedure `DNN_FN_USUARIO_LST` */
 
---
--- Dumping events for database 'ControlHotel'
---
+/*!50003 DROP PROCEDURE IF EXISTS  `DNN_FN_USUARIO_LST` */;
 
---
--- Dumping routines for database 'ControlHotel'
---
-/*!50003 DROP PROCEDURE IF EXISTS `DNN_SP_INICIOSESION` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8 */ ;
-/*!50003 SET character_set_results = utf8 */ ;
-/*!50003 SET collation_connection  = utf8_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_INICIOSESION`(
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_FN_USUARIO_LST`(
+	IN paTipoBsq int
+	,in paFiltro text
+	,in paSoloActivos int
+    )
+BEGIN
+	DECLARE vlqry TEXT;
+	set vlqry = concat('select idusuario, usuario, email, nombre, apellidos, idempleado, esactivo, idperfil, ultimoacc, fechareg, fechamod, idusrreg, idusermod, numintentos
+	 from dnn_usuarios where ');
+	 case paTipoBsq 
+		when 1 then set vlqry = concat(vlqry, ' ',' idusuario = ',paFiltro,' ');
+		WHEN 2 THEN SET vlqry = CONCAT(vlqry, ' ',' usuario = "',paFiltro,'" ');
+		WHEN 3 THEN SET vlqry = CONCAT(vlqry, ' ',' email = "',paFiltro,'" ');
+		WHEN 4 THEN SET vlqry = CONCAT(vlqry, ' ',' (nombre like "',paFiltro,'%" or apellidos like "',paFiltro,'%") ');
+		WHEN 5 THEN SET vlqry = CONCAT(vlqry, ' ',' idperfil = ',paFiltro,' ');
+		else set vlqry = concat(vlqry,' ');
+	end case;
+	set vlqry = concat(vlqry,' and esactivo = ',paSoloActivo,' order by idusuario asc ');
+	
+	SET @qry = vlqry;
+	PREPARE smtp FROM @qry;
+	EXECUTE smtp;
+	DEALLOCATE PREPARE smtp;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `DNN_SP_INICIOSESION` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `DNN_SP_INICIOSESION` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_INICIOSESION`(
 	IN paUsuario varchar(50)
     ,in paContrasena varchar(150)
     ,in paLugar varchar(255)
@@ -857,44 +605,171 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_INICIOSESION`(
 )
 BEGIN
 	declare vlexiste int;
-    declare vlidusuario int;
-    set vlexiste = 0;
-    set paRes = vlexiste;
-    set paMsg = 'EL USUARIO INDICADO NO EXISTE';
+	declare vlbloqueo int;
+	DECLARE vlnumintentos int;
+	declare vlidusuario int;
+	set vlbloqueo = 1;
+	set vlexiste = 0;
+	set paRes = vlexiste;
+	set paMsg = 'EL USUARIO INDICADO NO EXISTE';
 	select count(*) into vlexiste from dnn_usuarios where usuario = paUsuario;
-    if vlexiste > 0 then
+	if vlexiste > 0 then
 		set vlexiste = 0;
-        set paMsg = 'LA CONTRASENA ES INCORRECTA';
+		SELECT numintentos INTO vlnumintentos FROM dnn_usuarios WHERE usuario = paUsuario;
+		set paMsg = 'LA CONTRASENA ES INCORRECTA';
 		select count(*) into vlexiste from dnn_usuarios where usuario = paUsuario AND contrasena = paContrasena;
 		if vlexiste > 0 then
 			set paMsg = 'EL USUARIO NO ESTA ACTIVO';
 			SET vlexiste = 0;
-		    select esactivo into vlexiste from dnn_usuarios where usuario = paUsuario;
-            if vlexiste = 1 then
+			select esactivo into vlexiste from dnn_usuarios where usuario = paUsuario;
+			if vlexiste = 1 then
 				select idusuario into vlidusuario from dnn_usuarios where usuario = paUsuario;
-				update dnn_usuarios set ultimoacc = current_timestamp where usuario = paUsuario;
+				update dnn_usuarios set ultimoacc = current_timestamp, numintentos = 0 where usuario = paUsuario;
 				set vlexiste = 1;
 				set paMsg = 'BIENVENIDO';
 				set paRes = vlexiste;
 				insert into dnn_logaccesos_cnf(idusuario, fechareg, lugar, fecha, hora) values (vlidusuario, current_timestamp, paLugar, now(), now());
 			end if;
+		else
+			set vlnumintentos = vlnumintentos + 1;
+			if vlnumintentos > 3 then 
+				set vlbloqueo = 0;
+			end if;
+			UPDATE dnn_usuarios SET numintentos = vlnumbloqueos, esactivo = vlbloqueo WHERE usuario = paUsuario;
 		end if;
-    end if;
-
-END ;;
+	end if;
+END */$$
 DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/* Procedure structure for procedure `DNN_SP_USUARIO_AGR` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `DNN_SP_USUARIO_AGR` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_USUARIO_AGR`(
+	IN paUsuario varchar(50)
+	,in paEmail varchar(255)
+	,in paNombre varchar(150)
+	,in paApellidos varchar(150)
+	,in paIdEmpleado int
+	,in paIdPerfil int
+	,in paIdUsrreg int
+	,out paRes int
+	,out paMsg varchar(150)
+	,out paIdUsuario int
+    )
+BEGIN
+	declare vlexiste int;
+	set paRes = 0;
+	set paMsg = 'EL USUARIO INDICADO YA EXISTE, VALIDE SUS DATOS';
+	SET vlexiste = 0;
+	select count(*) into vlexiste from dnn_usuarios where usuario = paUsuario;
+	if vlexiste = 0 then
+		set paMsg = 'EL EMAIL INDICADO YA EXISTE, VALIDE SUS DATOS';
+		SELECT count(*) into vlexiste from dnn_usuarios where email = paEmail;
+		if vlexiste = 0 then
+			select ifnull((select max(idusuario) from dnn_usuarios),0) into vlexiste;
+			set vlexiste = vlexiste + 1;
+			insert into dnn_usuarios(idusuario, usuario, contrasena, email, nombre, apellidos, idempleado, esactivo, idperfil, fechareg, idusrreg, numintentos)
+			VALUES(vlexiste, paUsuario, password(paUsuario), paEmail, paNombre, paApellidos, paIdEmpleado, paIdPerfil, current_timestamp, paIdUsrreg, 0);
+			set paRes = 1;
+			set paMsg = 'USUARIO REGISTRADO CORRECTAMENTE!';
+			SET paIdUsuario = vlexiste;
+		end if;
+	end if;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `DNN_SP_USUARIO_EDT` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `DNN_SP_USUARIO_EDT` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_USUARIO_EDT`(
+	IN paIdUsuario int
+	,in paNombre varchar(150)
+	,in paApellidos varchar(150)
+	,in paIdEmpleado int
+	,in paEsActivo int
+	,in paIdPerfil int
+	,in paIdUsrreg int
+	,out paRes int
+	,out paMsg varchar(150)
+    )
+BEGIN
+	declare vlexiste int;
+	set paRes = 0;
+	set paMsg = 'EL USUARIO INDICADO NO EXISTE, VERIFIQUE SUS DATOS';
+	SELECT count(*) into vlexiste from dnn_usuarios where idusuario = paIdUsuario;
+	if vlexiste > 0 then
+		update dnn_usuarios set nombre = paNombre, apellidos = paApellidos, idempleado = paIdEmpleado, esactivo = paEsActivo, idperfil = paIdPerfil
+		,fechamod = current_timestamp, idusermod = paIdUsrreg where idusuario = paIdUsuario;
+		set paRes = 1;
+		set paMsg = 'USUARIO ACTUALIZADO CORRECTAMENTE!';
+	end if;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `DNN_SP_USUARIO_PAS` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `DNN_SP_USUARIO_PAS` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_USUARIO_PAS`(
+	IN paIdUsuario int
+	,in paAntPass varchar(150)
+	,in paNvoPass varchar(150)
+	,in paIdUsrreg int
+	,out paRes int
+	,out paMsg varchar(150)
+    )
+BEGIN
+	declare vlexiste int;
+	set paRes = 0;
+	set paMsg = 'EL USUARIO INDICADO NO EXISTE, VERIFIQUE SUS DATOS';
+	SELECT count(*) into vlexiste from dnn_usuarios where idusuario = paIdUsuario;
+	if vlexiste > 0 then
+		set vlexiste = 0;
+		set paMsg = 'LA CONTRASEÑA NO COINCIDE, VERIFIQUE SUS DATOS';
+		select count(*) into vlexiste from dnn_usuarios where idusuario = paIdUsuario and contrasena = paAntPass;
+		IF vlexiste > 0 then
+			set vlexiste = 0;
+			update dnn_usuarios set contrasena = PASSWORD(paNvoPass), fechamod = current_timestamp, idusermod = paIdUsrreg where idusuario = paIdUsuario;
+			set paRes = 1;
+			set paMsg = 'CONTRASEÑA ACTUALIZADA';
+		end if;
+	end if;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `DNN_SP_USUARIO_RST` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `DNN_SP_USUARIO_RST` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `DNN_SP_USUARIO_RST`(
+	IN paIdUsuario int
+	,in paContrasena varchar(150)
+	,in paIdUsrreg int
+	,out paRes int
+	,out paMsg varchar(150)
+    )
+BEGIN
+	declare vlexiste int;
+	set paRes = 0;
+	set paMsg = 'EL USUARIO INDICADO NO EXISTE, VERIFIQUE SUS DATOS';
+	select count(*) into vlexiste from dnn_usuarios where idusuario = paIdUsuario;
+	if vlexiste > 0 then 
+		update dnn_usuarios set contrasena = password(paContrasena), fechamod = current_timestamp, idusermod = paIdUsrreg where idusuario = paIdUsuario;
+		set paRes = 1;
+		set paMsg = 'CONTRASENA REESTABLECIDA CORRECTAMENTE';
+	end if;
+    END */$$
+DELIMITER ;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2017-06-27 19:40:29
